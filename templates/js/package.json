@@ -1,0 +1,14 @@
+{
+    "name": "my-mida-application",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "type": "module",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "dependencies": {
+        "@reiryoku/mida": "^7.0.0",
+        "@reiryoku/mida-binance": "^1.0.0"
+    }
+}
