@@ -30,8 +30,10 @@ const languagesDirectories = { "JavaScript": "js", "TypeScript": "ts", };
         },
     ]);
 
+    const projectPath = `${__dirname}/${projectName}`;
+
     try {
-        fs.mkdirSync(`${__dirname}/${projectName}`);
+        fs.mkdirSync(projectPath);
     }
     catch (error) {
         if (error.code === "EEXIST") {
@@ -50,16 +52,19 @@ const languagesDirectories = { "JavaScript": "js", "TypeScript": "ts", };
             choices: [ "JavaScript", "TypeScript", ],
         },
     ]);
+    */
+
+    createDirectoryContents(`${templatesPath}/js`, projectName);
+    installDependencies(projectName);
 
     console.log("\n");
     console.log("The project has been created successfully".bold.bgGreen);
     console.log("The project is located at ".bold + `${__dirname}/${projectName}`.bold.bgCyan);
-    */
 
     return printSuccessMessage();
 })();
 
-const createDirectoryContents = (templatePath, newProjectPath) => {
+const createDirectoryContents = (templatePath, projectName) => {
     const filesToCreate = fs.readdirSync(templatePath);
 
     filesToCreate.forEach((file) => {
@@ -68,13 +73,13 @@ const createDirectoryContents = (templatePath, newProjectPath) => {
 
         if (stats.isFile()) {
             const contents = fs.readFileSync(originalFilePath, "utf8");
-            const writePath = `${currentDirectory}/${newProjectPath}/${file}`;
+            const writePath = `${currentDirectory}/${projectName}/${file}`;
 
             fs.writeFileSync(writePath, contents, "utf8");
 
         } else if (stats.isDirectory()) {
-            fs.mkdirSync(`${currentDirectory}/${newProjectPath}/${file}`);
-            createDirectoryContents(`${templatePath}/${file}`, `${newProjectPath}/${file}`);
+            fs.mkdirSync(`${currentDirectory}/${projectName}/${file}`);
+            createDirectoryContents(`${templatePath}/${file}`, `${projectName}/${file}`);
         }
     });
 }
