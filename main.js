@@ -30,7 +30,7 @@ const languagesDirectories = { "JavaScript": "js", "TypeScript": "ts", };
         },
     ]);
 
-    const projectPath = `${__dirname}/${projectName}`;
+    const projectPath = `${currentDirectory}/${projectName}`;
 
     try {
         fs.mkdirSync(projectPath);
@@ -59,7 +59,7 @@ const languagesDirectories = { "JavaScript": "js", "TypeScript": "ts", };
 
     console.log("\n");
     console.log("The project has been created successfully".bold.bgGreen);
-    console.log("The project is located at ".bold + `${__dirname}/${projectName}`.bold.bgCyan);
+    console.log(projectPath.bold.bgGreen);
 
     return printSuccessMessage();
 })();
