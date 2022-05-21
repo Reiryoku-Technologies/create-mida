@@ -5,10 +5,16 @@
     "main": "main.js",
     "type": "module",
     "scripts": {
-        "start": "node main.js"
+        "start": "node main.js",
+        "lint": "eslint . --ext .ts,.js"
     },
     "dependencies": {
+        "@reiryoku/eslint-config-reiryoku": "^1.0.0",
         "@reiryoku/mida": "^7.0.0",
-        "@reiryoku/mida-binance": "^1.0.0"
+        "@reiryoku/mida-binance": "^1.0.0",
+        "eslint": "^8.15.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0"
     }
 }

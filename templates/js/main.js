@@ -1,6 +1,6 @@
 import { Mida, } from "@reiryoku/mida";
-import { BinancePlugin } from "@reiryoku/mida-binance";
-import { MyTradingStrategy, } from "./src/my-trading-strategy.js";
+import { BinancePlugin, } from "@reiryoku/mida-binance";
+import { MyTradingStrategy, } from "./src/MyTradingStrategy.js";
 
 Mida.use(new BinancePlugin());
 

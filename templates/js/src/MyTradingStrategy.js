@@ -1,7 +1,7 @@
-import { MidaExpertAdvisor, MidaTimeframe } from "@reiryoku/mida";
+import { MidaExpertAdvisor, MidaTimeframe, } from "@reiryoku/mida";
 
 export class MyTradingStrategy extends MidaExpertAdvisor {
-    constructor({ tradingAccount, }) {
+    constructor ({ tradingAccount, }) {
         super({
             name: "MyTradingStrategy",
             version: "1.0.0",
