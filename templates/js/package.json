@@ -11,6 +11,7 @@
     "dependencies": {
         "@reiryoku/mida": "^7.0.0",
         "@reiryoku/mida-binance": "^1.0.0",
+        "@reiryoku/mida-ctrader": "^3.0.0",
         "eslint": "^8.15.0"
     }
 }

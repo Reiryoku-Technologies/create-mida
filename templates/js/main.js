@@ -1,8 +1,10 @@
 import { Mida, } from "@reiryoku/mida";
 import { BinancePlugin, } from "@reiryoku/mida-binance";
+import { CTraderPlugin, } from "@reiryoku/mida-ctrader";
 import { MyTradingStrategy, } from "./src/MyTradingStrategy.js";
 
 Mida.use(new BinancePlugin());
+Mida.use(new CTraderPlugin());
 
 (async () => {
     // Read the documentation to use other trading platforms

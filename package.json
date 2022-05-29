@@ -1,6 +1,6 @@
 {
     "name": "create-mida",
-    "version": "1.0.4",
+    "version": "1.1.0",
     "description": "",
     "main": "main.js",
     "bin": {
@@ -10,7 +10,7 @@
         "templates"
     ],
     "dependencies": {
-        "inquirer": "^8.2.4",
-        "colors": "^1.4.0"
+        "colors": "^1.4.0",
+        "inquirer": "^8.2.4"
     }
 }
