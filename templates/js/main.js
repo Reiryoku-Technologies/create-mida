@@ -1,15 +1,20 @@
-import { Mida, } from "@reiryoku/mida";
+import { Mida, login, } from "@reiryoku/mida";
+import { ProInspector } from "@reiryoku/pro-inspector";
 import { BinancePlugin, } from "@reiryoku/mida-binance";
 import { CTraderPlugin, } from "@reiryoku/mida-ctrader";
 import { MyTradingStrategy, } from "./src/MyTradingStrategy.js";
 
+// Used to enhance console logs
+ProInspector.activateGlobally();
+// Used to install the Binance plugin
 Mida.use(new BinancePlugin());
+// Used to install the cTrader plugin
 Mida.use(new CTraderPlugin());
 
 (async () => {
     // Read the documentation to use other trading platforms
     // Binance Spot account login
-    const myAccount = await Mida.login("Binance/Spot", {
+    const myAccount = await login("Binance/Spot", {
         apiKey: "...",
         apiSecret: "...",
     });
