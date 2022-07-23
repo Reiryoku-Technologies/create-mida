@@ -9,9 +9,20 @@ export class MyTradingStrategy extends MidaExpertAdvisor {
         });
     }
 
+    watched () {
+        return {
+            "BTCUSDT": {
+                watchTicks: true,
+            },
+            "ETHUSDT": {
+                watchPeriods: true,
+                timeframes: [ MidaTimeframe.M1, ],
+            }
+        }
+    }
+
     async configure () {
-        await this.watchTicks("BTCUSDT");
-        await this.watchPeriods("ETHUSDT", MidaTimeframe.M1);
+
     }
 
     async onStart () {

@@ -12,11 +12,11 @@ Mida.use(new BinancePlugin());
 Mida.use(new CTraderPlugin());
 
 (async () => {
-    // Read the documentation to use other trading platforms
+    // Read the documentation at www.mida.org to use other trading platforms
     // Binance Spot account login
     const myAccount = await login("Binance/Spot", {
-        apiKey: "...",
-        apiSecret: "...",
+        apiKey: "***",
+        apiSecret: "***",
     });
 
     // Create instance of a trading bot
@@ -28,7 +28,5 @@ Mida.use(new CTraderPlugin());
     await myTradingBot.start();
 
     // Stop the trading bot after 10 minutes
-    setTimeout(async () => {
-        await myTradingBot.stop();
-    }, 1000 * 60 * 10);
+    setTimeout(() => myTradingBot.stop(), 1000 * 60 * 10);
 })();
